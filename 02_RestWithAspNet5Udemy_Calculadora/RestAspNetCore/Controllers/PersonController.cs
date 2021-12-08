@@ -9,11 +9,11 @@ namespace RestAspNetCore.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CalculadoraController : ControllerBase
+    public class PersonController : ControllerBase
     {
-        private readonly ILogger<CalculadoraController> _logger;
+        private readonly ILogger<PersonController> _logger;
 
-        public CalculadoraController(ILogger<CalculadoraController> logger)
+        public PersonController(ILogger<PersonController> logger)
         {
             _logger = logger;
         }
