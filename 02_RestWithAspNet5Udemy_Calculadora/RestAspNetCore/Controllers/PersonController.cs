@@ -11,8 +11,6 @@ namespace RestAspNetCore.Controllers
     [Route("[controller]")]
     public class CalculadoraController : ControllerBase
     {
-        
-
         private readonly ILogger<CalculadoraController> _logger;
 
         public CalculadoraController(ILogger<CalculadoraController> logger)
@@ -21,7 +19,7 @@ namespace RestAspNetCore.Controllers
         }
 
         [HttpGet("sum/{firstNumber}/{secondNumber}")]
-        public IActionResult GetSum(string firstNumber, string secondNumber)
+        public IActionResult Sum(string firstNumber, string secondNumber)
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
@@ -33,7 +31,7 @@ namespace RestAspNetCore.Controllers
         }
 
         [HttpGet("sub/{firstNumber}/{secondNumber}")]
-        public IActionResult GetSub(string firstNumber, string secondNumber)
+        public IActionResult Sub(string firstNumber, string secondNumber)
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
@@ -45,7 +43,7 @@ namespace RestAspNetCore.Controllers
         }
 
         [HttpGet("mult/{firstNumber}/{secondNumber}")]
-        public IActionResult GetMult(string firstNumber, string secondNumber)
+        public IActionResult Mult(string firstNumber, string secondNumber)
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
@@ -56,7 +54,7 @@ namespace RestAspNetCore.Controllers
         }
 
         [HttpGet("div/{firstNumber}/{secondNumber}")]
-        public IActionResult GetDiv(string firstNumber, string secondNumber)
+        public IActionResult Div(string firstNumber, string secondNumber)
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
@@ -72,8 +70,8 @@ namespace RestAspNetCore.Controllers
             return BadRequest("Input inválido!");
         }
 
-        [HttpGet("avg/{firstNumber}/{secondNumber}")]
-        public IActionResult GetAvg(string firstNumber, string secondNumber)
+        [HttpGet("media/{firstNumber}/{secondNumber}")]
+        public IActionResult Media(string firstNumber, string secondNumber)
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
@@ -83,8 +81,8 @@ namespace RestAspNetCore.Controllers
             return BadRequest("Input inválido!");
         }
 
-        [HttpGet("sqrt/{firstNumber}")]
-        public IActionResult GetSqrt(string firstNumber)
+        [HttpGet("raizq/{firstNumber}")]
+        public IActionResult RaizQ(string firstNumber)
         {
             if (IsNumeric(firstNumber))
             {
@@ -92,7 +90,7 @@ namespace RestAspNetCore.Controllers
                 {
                     return BadRequest("Não é possível calcular raiz de número negativo!");
                 }
-                var sqtr = System.Math.Sqrt(Convert.ToDouble(firstNumber));
+                var sqtr = System.Math.Sqrt(Convert.ToDouble(firstNumber)); // ou (double) ConvertToDecimal(firstNumber)
                 return Ok(sqtr.ToString());
             }
 
