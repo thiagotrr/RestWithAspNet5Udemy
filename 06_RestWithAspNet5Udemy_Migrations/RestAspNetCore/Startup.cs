@@ -49,6 +49,8 @@ namespace RestAspNetCore
             // Injeção de dependência
             services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
             services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
+            services.AddScoped<IBookBusiness, BookBusinessImplementation>();
+            services.AddScoped<IBookRepository, BookRepositoryImplementation>();
         }
 
         private void MigrateDatabase(string connection)
