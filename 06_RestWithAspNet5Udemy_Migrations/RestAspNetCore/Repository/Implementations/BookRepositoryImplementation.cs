@@ -69,7 +69,7 @@ namespace RestAspNetCore.Repository.Implementations
             {
                 try
                 {
-                    _context.Books.Remove(id);
+                    _context.Books.Remove(result);
                     _context.SaveChanges();
                 }
                 catch (Exception)

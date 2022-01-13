@@ -31,7 +31,7 @@ namespace RestAspNetCore.Controllers
             return Ok(_bookBusiness.FindAll());
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult Get(long id)
         {
             var book = _bookBusiness.FindById(id);
